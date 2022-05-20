@@ -1,0 +1,20 @@
+const Router = require('koa-router')
+const router = new Router()
+const login = require('./login')
+const frontuser = require('./frontuser')
+const waste = require('./waste')
+const question = require('./question')
+const upload = require('./upload')
+const article = require('./article')
+const chart = require('./chart')
+
+router.prefix('/api')
+router.use('/login',login.routes(),login.allowedMethods())
+router.use('/frontuser',frontuser.routes(),frontuser.allowedMethods())
+router.use('/waste',waste.routes(),waste.allowedMethods())
+router.use('/question',question.routes(),question.allowedMethods())
+router.use('/upload',upload.routes(),upload.allowedMethods())
+router.use('/article',article.routes(),article.allowedMethods())
+router.use('/chart',chart.routes(),chart.allowedMethods())
+
+module.exports = router
