@@ -1,11 +1,21 @@
 const article = require('../mysql/article')
 
 exports.findArticle = async ctx => {
-  let res = await article.findArticle()
-  ctx.body = {
-    data: res,
-    code: 200,
-    message: '查询文章成功'
+  let {category=''} = ctx.request.query
+  if (!category){
+    let res = await article.findArticle()
+    ctx.body = {
+      data: res,
+      code: 200,
+      message: '查询文章成功'
+    }
+  } else {
+    let res = await article.findArticleByType(decodeURI(category))
+    ctx.body = {
+      data: res,
+      code: 200,
+      message: '查询文章成功'
+    }
   }
 }
 exports.findArticleById = async ctx => {

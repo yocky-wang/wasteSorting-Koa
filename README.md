@@ -2,6 +2,7 @@
 功能：用户管理，垃圾分类数据，垃圾图像识别，垃圾知识题库，垃圾资讯文章以及数据报表
 
 模型训练仓库：<https://github.com/1537309430/wasteSorting-tfjs>(将output文件下内容复制到assets/tensorflow中)
+
 接口文档：<https://github.com/1537309430/wasteSorting-Koa/blob/master/api.md>
 ## 项目整体文件说明
 - `assets` 静态资源

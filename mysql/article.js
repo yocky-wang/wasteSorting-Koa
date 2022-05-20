@@ -4,6 +4,10 @@ exports.findArticle = ()=>{
   let _sql = `select * from article_copy1;`
   return db.query( _sql )
 }
+exports.findArticleByType = (category)=>{
+  let _sql = `select * from article_copy1 where category='${category}';`
+  return db.query( _sql )
+}
 exports.findArticleById = (id )=>{
   let _sql = `select * from article_copy1 where id=${id};`
   return db.query( _sql )
